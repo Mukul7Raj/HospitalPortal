@@ -1,83 +1,98 @@
-HospitalPortal
-A comprehensive hospital management system built with Ruby on Rails. This application is designed to streamline hospital operations, including appointment scheduling, patient records, and billing management.
+🏥 HospitalPortal
+HospitalPortal is a comprehensive hospital management system built with Ruby on Rails, designed to streamline essential hospital operations such as appointment scheduling, patient record management, and billing.
 
-Features
-🏥 Appointment Management: Schedule, reschedule, and cancel appointments.
-📋 Patient Records: Maintain detailed patient information.
-💳 Billing System: Generate and manage patient bills efficiently.
-📊 Admin Dashboard: Get insights into hospital activities.
-🔒 Secure Authentication: User authentication and role-based access control.
-Tech Stack
+🚀 Features
+Appointment Management: Schedule, reschedule, and cancel appointments with ease.
+
+Patient Records: Maintain comprehensive and secure patient data.
+
+Billing System: Generate and manage patient bills efficiently.
+
+Admin Dashboard: Get actionable insights into hospital activities.
+
+Secure Authentication: Role-based access control and secure user login.
+
+🛠 Tech Stack
 Backend: Ruby on Rails
-Frontend: HTML, CSS, JavaScript
-Database: PostgreSQL
-Deployment: Render / Heroku
-Other Tools: Docker, Shell scripting
-Getting Started
-Follow these steps to set up the project locally:
 
+Frontend: HTML, CSS, JavaScript
+
+Database: PostgreSQL
+
+Deployment: Render / Heroku
+
+Tools: Docker, Shell Scripting
+
+⚙️ Getting Started
 1. Prerequisites
-Ruby (version specified in .ruby-version)
+Ruby (version as per .ruby-version)
+
 PostgreSQL
-Node.js and Yarn
+
+Node.js & Yarn
+
 Bundler
+
 2. Clone the Repository
-bash
 git clone https://github.com/Mukul7Raj/HospitalPortal.git
 cd HospitalPortal
 3. Install Dependencies
-bash
 bundle install
 yarn install
 4. Set Up the Database
-Update the config/database.yml file with your PostgreSQL credentials, then run:
+Update your config/database.yml with your PostgreSQL credentials, then run:
 
-bash
 rails db:create
 rails db:migrate
 5. Start the Server
-bash
 rails s
-Visit http://localhost:3000 in your browser to check the application.
+Open http://localhost:3000 in your browser.
 
-Deployment
-Render Deployment
-Use the following build command:
-bash
+☁️ Deployment
+🔹 Render
+Build Command:
+
 bundle install && yarn install && bundle exec rails assets:precompile && bundle exec rails db:migrate
-Set SECRET_KEY_BASE and DATABASE_URL as environment variables in Render.
-Heroku Deployment
-Add PostgreSQL to your Gemfile:
-Ruby
+Environment Variables Required:
+
+SECRET_KEY_BASE
+
+DATABASE_URL
+
+🔹 Heroku
+Ensure PostgreSQL is included in your Gemfile:
+
 gem 'pg', '~> 1.1'
-Push your code to Heroku:
-bash
+Deploy your app:
+
 git push heroku main
 Run migrations:
-bash
+
 heroku run rails db:migrate
-Screenshots
+📷 Screenshots
+(Add actual image links if available)
+
 Dashboard
-Dashboard Screenshot
 
 Patient Management
-Patient Management Screenshot
 
-Contributing
-We welcome contributions to improve HospitalPortal! Here’s how you can help:
+🤝 Contributing
+We welcome contributions! To contribute:
 
 Fork the repository.
-Create a feature branch:
-bash
+
+Create a new branch:
+
 git checkout -b feature-name
 Commit your changes:
-bash
+
 git commit -m "Add feature name"
-Push your branch and open a pull request.
-License
+Push and open a Pull Request.
+
+📄 License
 This project is licensed under the MIT License.
 
-Contact
-Created and maintained by Mukul7Raj.
-Feel free to reach out for any questions or feedback!
+📬 Contact
+Created and maintained by Mukul7Raj
+Feel free to reach out for questions, feedback, or collaboration ideas!
 
