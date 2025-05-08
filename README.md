@@ -118,6 +118,4 @@ This project is licensed under the [MIT License](LICENSE).
 Created and maintained by **Mukul7Raj**  
 Feel free to reach out for questions, feedback, or collaboration ideas!
 
---- 
 
-You can replace placeholder sections like "Screenshots" with actual images or links as per your project. Let me know if you'd like to add anything else!
