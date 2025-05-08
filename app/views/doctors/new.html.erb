@@ -1,0 +1,35 @@
+<form action="<%= doctors_path %>" method="post">
+  <div class="form-group">
+    <label for="doctor_name">Name</label>
+    <input type="text" name="doctor[name]" id="doctor_name" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="doctor_specialization">Specialization</label>
+    <input type="text" name="doctor[specialization]" id="doctor_specialization" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="doctor_email">Email</label>
+    <input type="email" name="doctor[email]" id="doctor_email" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="doctor_phone">Phone</label>
+    <input type="tel" name="doctor[phone]" id="doctor_phone" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="doctor_password">Password</label>
+    <input type="password" name="doctor[password]" id="doctor_password" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="doctor_password_confirmation">Password Confirmation</label>
+    <input type="password" name="doctor[password_confirmation]" id="doctor_password_confirmation" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Create Doctor</button>
+  </div>
+</form>

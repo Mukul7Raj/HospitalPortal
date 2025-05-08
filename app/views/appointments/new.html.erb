@@ -1,0 +1,28 @@
+<form action="<%= appointments_path %>" method="post">
+  <div class="form-group">
+    <label for="appointment_patient_id">Patient</label>
+    <select name="appointment[patient_id]" id="appointment_patient_id" class="form-control">
+      <% @patients.each do |patient| %>
+        <option value="<%= patient.id %>"><%= patient.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="appointment_scheduled_at">Scheduled At</label>
+    <input type="datetime-local" name="appointment[scheduled_at]" id="appointment_scheduled_at" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="appointment_status">Status</label>
+    <select name="appointment[status]" id="appointment_status" class="form-control">
+      <option value="scheduled">Scheduled</option>
+      <option value="completed">Completed</option>
+      <option value="canceled">Canceled</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Create Appointment</button>
+  </div>
+</form>

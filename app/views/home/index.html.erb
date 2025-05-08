@@ -1,0 +1,85 @@
+<div class="container mt-4">
+  <div class="jumbotron bg-light p-5 rounded">
+    <h1 class="display-4">Welcome to Hospital Portal</h1>
+    <p class="lead">Manage patients, doctors, and appointments efficiently.</p>
+    <hr class="my-4">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card text-white bg-primary">
+          <div class="card-body">
+            <h5 class="card-title">Total Patients</h5>
+            <p class="card-text display-6"><%= @total_patients %></p>
+            <%= link_to 'View Patients', patients_path, class: 'btn btn-light' %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card text-white bg-success">
+          <div class="card-body">
+            <h5 class="card-title">Total Doctors</h5>
+            <p class="card-text display-6"><%= @total_doctors %></p>
+            <%= link_to 'View Doctors', doctors_path, class: 'btn btn-light' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card text-white bg-info">
+          <div class="card-body">
+            <h5 class="card-title">Quick Actions</h5>
+            <div class="d-grid gap-2">
+              <%= link_to 'New Patient', new_patient_path, class: 'btn btn-light mb-2' %>
+              <%= link_to 'New Appointment', new_appointment_path, class: 'btn btn-light' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">Upcoming Appointments</h5>
+          <%= link_to 'View All', appointments_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+        <div class="card-body">
+          <% if @upcoming_appointments.any? %>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Date & Time</th>
+                    <th>Patient</th>
+                    <th>Doctor</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @upcoming_appointments.each do |appointment| %>
+                    <tr>
+                      <td><%= appointment.scheduled_at.strftime('%B %d, %Y %I:%M %p') %></td>
+                      <td><%= link_to appointment.patient.name, patient_path(appointment.patient) %></td>
+                      <td><%= appointment.doctor.name %></td>
+                      <td><span class="badge bg-<%= appointment.status == 'pending' ? 'warning' : 'success' %>">
+                        <%= appointment.status.titleize %>
+                      </span></td>
+                      <td>
+                        <%= link_to 'View', appointment_path(appointment), class: 'btn btn-info btn-sm' %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          <% else %>
+            <p class="text-muted mb-0">No upcoming appointments.</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

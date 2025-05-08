@@ -1,0 +1,43 @@
+<h1>Patients</h1>
+
+<div class="mb-4">
+  <%= link_to 'New Patient', new_patient_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Contact Number</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.name %></td>
+          <td><%= patient.date_of_birth.strftime('%B %d, %Y') if patient.date_of_birth %></td>
+          <td><%= patient.gender %></td>
+          <td><%= patient.contact_number %></td>
+          <td>
+            <%= link_to 'View', patient_path(patient), class: 'btn btn-info btn-sm' %>
+            <%= link_to 'Edit', edit_patient_path(patient), class: 'btn btn-warning btn-sm' %>
+            <%= link_to 'Delete', patient_path(patient), 
+                method: :delete, 
+                data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<% if @patients.empty? %>
+  <div class="alert alert-info">
+    No patients found. <%= link_to 'Create your first patient', new_patient_path %>.
+  </div>
+<% end %>

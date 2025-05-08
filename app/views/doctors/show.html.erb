@@ -1,0 +1,18 @@
+<h1><%= @doctor.name %></h1>
+
+<p><strong>Specialization:</strong> <%= @doctor.specialization %></p>
+<p><strong>Email:</strong> <%= @doctor.email %></p>
+<p><strong>Phone:</strong> <%= @doctor.phone %></p>
+
+<h2>Appointments</h2>
+<ul>
+  <% @doctor.appointments.each do |appointment| %>
+    <li>
+      <strong>Date:</strong> <%= appointment.scheduled_at.strftime("%B %d, %Y %I:%M %p") %>
+      <strong>Status:</strong> <%= appointment.status %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit Doctor', edit_doctor_path(@doctor) %>
+<%= link_to 'Back to Doctors', doctors_path %>

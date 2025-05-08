@@ -1,0 +1,11 @@
+<div class="container mt-4">
+  <h1>Edit Patient</h1>
+
+  <div class="card">
+    <div class="card-body">
+      <%= render 'form', patient: @patient %>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Back', patients_path %>

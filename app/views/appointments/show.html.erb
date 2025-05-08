@@ -1,0 +1,24 @@
+<h1>Appointment Details</h1>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @appointment.patient.name %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @appointment.user.name %>
+</p>
+
+<p>
+  <strong>Scheduled At:</strong>
+  <%= @appointment.scheduled_at.strftime("%B %d, %Y at %I:%M %p") %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @appointment.status.humanize %>
+</p>
+
+<%= link_to 'Edit Appointment', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back to Appointments', appointments_path %>

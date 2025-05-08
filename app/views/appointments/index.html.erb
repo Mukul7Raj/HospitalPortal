@@ -1,0 +1,32 @@
+<h1>Appointments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Patient</th>
+      <th>Doctor</th>
+      <th>Scheduled At</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.id %></td>
+        <td><%= appointment.patient.name %></td>
+        <td><%= appointment.user.name %></td>
+        <td><%= appointment.scheduled_at.strftime("%B %d, %Y %I:%M %p") %></td>
+        <td><%= appointment.status %></td>
+        <td>
+          <%= link_to 'Show', appointment_path(appointment) %>
+          <%= link_to 'Edit', edit_appointment_path(appointment) %>
+          <%= link_to 'Destroy', appointment_path(appointment), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Appointment', new_appointment_path %>

@@ -1,0 +1,47 @@
+<%= form_with(model: patient, local: true) do |f| %>
+  <% if patient.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h4>
+      <ul>
+        <% patient.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group mb-3">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :date_of_birth %>
+    <%= f.date_field :date_of_birth, class: 'form-control' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :gender %>
+    <%= f.select :gender, ['Male', 'Female', 'Other'], { include_blank: 'Select Gender' }, class: 'form-control' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :contact_number %>
+    <%= f.text_field :contact_number, class: 'form-control' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :address %>
+    <%= f.text_area :address, class: 'form-control', rows: 3 %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :medical_history %>
+    <%= f.text_area :medical_history, class: 'form-control', rows: 5 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'Back', patients_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %> 
