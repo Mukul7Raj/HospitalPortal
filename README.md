@@ -52,7 +52,7 @@ rails db:migrate
 
 ### 5. Start the Server
 ```bash
-rails s
+rails server
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
